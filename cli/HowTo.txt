@@ -1,0 +1,56 @@
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ node bin/index.js heap
+Request time: 12:15:22.965
+Response time: 12:15:23.567
+{
+  free_heap_size: 201584,
+  largest_free_block_size: 113792,
+  status_code: 0
+}
+
+
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ node bin/index.js upload example.wasm 4096 65536 4096
+Request time: 14:7:1.358
+Response time: 14:7:2.21
+{ status_code: 0, message: 'file uploaded successfully' }
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ node bin/index.js start example.wasm 
+Request time: 14:7:8.97
+Response time: 14:7:8.411
+{ status_code: 0, message: 'task started successfully' }
+
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ node bin/index.js heap
+Request time: 14:54:15.915
+Response time: 14:54:16.512
+{
+  free_heap_size: 188360,
+  largest_free_block_size: 113792,
+  status_code: 0
+}
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ node bin/index.js details
+Request time: 14:54:24.34
+Response time: 14:54:24.192
+{
+  files: [
+    {
+      filename: '/tasks/example.wasm',
+      reserved_stack_size: 4096,
+      reserved_initial_memory: 65536,
+      memory_limit: 4096
+    }
+  ],
+  status_code: 0
+}
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ node bin/index.js stop example.wasm
+Request time: 14:56:49.165
+Response time: 14:56:49.503
+{ status_code: 0, message: 'task stopped successfully' }
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ node bin/index.js heap
+Request time: 14:56:59.18
+Response time: 14:56:59.334
+{
+  free_heap_size: 192720,
+  largest_free_block_size: 113792,
+  status_code: 0
+}
+s227840@hp-elite:~/Projets/Embedded/esp/wasmico/cli$ 
+
+
